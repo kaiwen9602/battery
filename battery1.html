@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+        }
+        .battery-body{
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 200px;
+            height: 320px;
+            background-color: #fff;
+            border-radius: 5% 5% 0% 0%;
+        }
+        .battery-body::before{
+            content:"";
+            position:absolute;
+            top:-20px;
+            left:0;
+            right:0; 
+            margin: auto;
+            width: 50px;
+            height: 20px;
+            border-radius: 30% 30% 0 0;
+            background-color: white;
+        }
+        .battery-power{
+            position:absolute;
+            bottom:0;
+            width: 100%;
+            height: 5%;
+            background-image: linear-gradient( #f315e1 20%,#d63ddb7a 40%, #e74792 60%,#c53dd1 100% );
+            background-size: 200px 320px;
+            background-position: center;
+            filter: hue-rotate(0deg);
+            /* border-radius: 5% 5% 0% 0%; */
+            animation:charging 10s linear infinite;
+            overflow: hidden;
+        }
+        @keyframes charging{
+            from{
+                height:5%;
+                filter: hue-rotate(0deg);
+            }
+            to{
+                height:95%;
+                filter: hue-rotate(-70deg);
+            }
+        }
+        .battery-power::before{
+            content:"";
+            position:absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 46% 60% 50% 45%/45%;
+            top:-380px;
+            left:-100px;
+            background-color: #fff;
+            opacity: 0.9;
+            animation:spin 3s linear infinite ;
+        }
+        @keyframes spin {
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+        .battery-power::after{
+            content:"";
+            position:absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 46% 60% 50% 45%/45%;
+            top:-380px;
+            left:-100px;
+            background-color: white;
+            opacity: 0.9;
+            transform: rotate(0deg);
+            animation:spin 5s linear infinite ;
+        }
+    </style>
+</head>
+<body>
+    <div class="battery-body">
+        <div class="battery-power"></div>
+    </div>
+</body>
+</html>

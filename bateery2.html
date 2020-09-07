@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-page{
+            position: absolute;
+            left:0;
+            right:0;
+            margin: 40px auto;
+            width: 800px;
+            height: 800px;
+            background-color: #000;
+            filter:contrast(20);
+            animation: color-change 4s linear infinite;
+        }
+        
+        .top-info{
+            position:absolute;
+            top:60px;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 200px;
+            height: 200px;
+            background-color: #41b349;
+            filter: blur(5px);
+            border-radius: 30% 40% 35% 45%/40%;
+            animation:  spin 3s linear infinite;
+            
+        }
+        @keyframes spin {
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+        .top-info::before{
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+            width: 170px;
+            height: 170px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        @keyframes color-change{
+            from{
+                filter: contrast(20) hue-rotate(0deg);
+            }
+            to{
+                filter: contrast(20) hue-rotate(360deg);
+            }
+        }
+        .bubble{
+            position:absolute;
+            width: 30px;
+            height: 30px;
+            bottom:20px;
+            left:45%;
+            margin:auto;
+            background-color: #41b349;
+            border-radius: 50% 50% 0 0;
+            filter:blur(5px); 
+            animation:pop-up 4s ease-in-out infinite,
+            bubble-rotate 4s ease-in-out infinite;
+        }
+        @keyframes bubble-rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes pop-up{
+            from{
+                bottom:0px;
+            }
+            to{
+                bottom: calc(100% - 200px - 60px - 15px);
+            }
+        }
+        .bubble-industry{
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 150px;
+            height: 60px;
+            filter:blur(8px);
+            background-color: #41b349;
+            border-radius: 50% 50% 10% 10%;   
+        }
+        .bubble:nth-child(1){
+            animation-duration: 4s;
+            animation-delay: 0s;
+            left:45%;
+        }
+        .bubble:nth-child(2){
+            animation-duration: 4s;
+            animation-delay: 1s;
+            left:50%;
+        }
+        .bubble:nth-child(3){
+            height: 23px;
+            animation-duration: 4s;
+            animation-delay: 1s;
+            left:47%;
+        }
+        .bubble:nth-child(4){
+            animation-duration: 4.5s;
+            animation-delay: 1s;
+            left:42%;
+        }
+        .bubble:nth-child(5){
+            width: 23px;
+            animation-duration: 3.5s;
+            animation-delay: 2s;
+            left:46%;
+        }
+        .bubble:nth-child(6){
+            height: 35px;
+            animation-duration: 3s;
+            animation-delay: 0.5s;
+            left:52%;
+        }
+        .bubble:nth-child(7){
+            width: 35px;
+            animation-duration: 3s;
+            animation-delay: 1.5s;
+            left:55%;
+        }
+        .bubble:nth-child(8){
+            animation-duration: 5s;
+            animation-delay: 1.7s;
+            left:53%;
+        }
+        .bubble:nth-child(9){
+            animation-duration: 4.5s;
+            animation-delay: 1s;
+            left:43%;
+        }
+        .bubble:nth-child(10){
+            height: 25px;
+            animation-duration: 2s;
+            animation-delay: 3s;
+            left:42%;
+        }
+        .bubble:nth-child(11){
+            animation-duration: 4.4s;
+            animation-delay: 1.9s;
+            left:53%;
+        }
+        .bubble:nth-child(12){
+            animation-duration: 3s;
+            animation-delay: 2s;
+            left:44%;
+        }
+        .bubble:nth-child(13){
+            width: 19px;
+            animation-duration: 2.5s;
+            animation-delay: 4s;
+            left:43%;
+        }
+        .bubble:nth-child(14){
+            height: 20px;
+            animation-duration: 3.5s;
+            animation-delay: 2.5s,5s;
+            left:43%;
+        }
+        .bubble:nth-child(15){
+            width: 30px;
+            height: 30px;
+            animation-duration: 4.8s;
+            animation-delay: 1s;
+            left:48%;
+        }
+        .time{
+            color:pink;
+            position:absolute;
+            left:0;
+            right:0;
+            width: 100px;
+            height: 100px;
+            margin:120px auto;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <div class="time">20%</div>
+        <div class="top-info"></div>
+        <div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        <div class="bubble-industry"></div>
+    </div>
+</body>
+</html>
